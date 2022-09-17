@@ -25,18 +25,17 @@ const cosasQueAprendimos = [
     },
 ];
 function borrarElementosLi() {
-    const listEl = document.querySelectorAll('li');
-    listEl.forEach((el) => {
-        el.remove();
-    });
-    const listaUlEl = document.querySelector('ul');
+    const listLiEl = document.querySelectorAll('.lista li');
+    listLiEl.forEach((el) => el.remove());
+    /* const listaUlEl = document.querySelector('ul'); */
     /*  console.log(listaUlEl); */
 }
 function creacionElementosLi() {
     const listaUlEl = document.querySelector('ul');
     cosasQueAprendimos.forEach((el) => {
         const newEl = document.createElement('li');
-        newEl.textContent = el.class;
+        newEl.textContent = el.tema;
+        newEl.className = el.class;
         listaUlEl.appendChild(newEl);
     });
 }
@@ -47,12 +46,8 @@ Crear nuevos elementos <li> basados en el array cosasQueAprendimos[] que está e
 Por cada elemento del array crear un elemento <li> con la clase indicada en cada elemento.
 
 Publicar su página en Github Pages y compartir con todxs en Discord. */
-    setTimeout(() => {
-        borrarElementosLi();
-    }, 2000);
-    setTimeout(() => {
-        creacionElementosLi();
-    }, 2000);
+    setTimeout(() => borrarElementosLi(), 2000);
+    setTimeout(() => creacionElementosLi(), 2000);
 }
 
 main();
